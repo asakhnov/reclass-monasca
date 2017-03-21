@@ -1,0 +1,52 @@
+parameters:
+  _param:
+    openstack_version: mitaka
+    openstack_region: RegionOne
+    grafana_user: admin
+    grafana_password: password
+    grafana_influxdb_host: ${_param:monasca_address}
+    influxdb_monasca_password: monascapass
+    influxdb_admin_password: password
+    influxdb_port: 8086
+    mysql_monasca_password: monasca
+    keystone_monasca_password: monasca
+    keystone_monasca_agent_password: monasca
+    keystone_admin_token: workshop
+  linux:
+    network:
+      host:
+        mnk:
+          address: ${_param:monasca_address}
+          names:
+          - mnk
+          - mnk.${_param:cluster_domain}
+        mnk01:
+          address: ${_param:monasca_node01_address}
+          names:
+          - mnk01
+          - mnk01.${_param:cluster_domain}
+        mnk02:
+          address: ${_param:monasca_node02_address}
+          names:
+          - mnk02
+          - mnk02.${_param:cluster_domain}
+        mnk03:
+          address: ${_param:monasca_node03_address}
+          names:
+          - mnk03
+          - mnk03.${_param:cluster_domain}
+  kafka:
+    topics:
+      enabled: true
+      names:
+        - metrics
+        - events
+        - raw-events
+        - transformed-events
+        - stream-definitions
+        - transform-definitions
+        - alarm-state-transitions
+        - alarm-notifications
+        - stream-notifications
+        - retry-notifications
+        - 60-seconds-notifications

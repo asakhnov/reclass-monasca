@@ -1,0 +1,33 @@
+classes:
+- cluster.mk22_lab_dvr
+- system.influxdb.server.single
+- service.haproxy.proxy.single
+- service.zookeeper.server.cluster
+- service.kafka.server.cluster
+- service.storm.server.cluster
+- system.monasca.repo.monasca
+- system.monasca.keepalived.cluster.instance.monasca_vip
+- system.monasca.haproxy.proxy.listen.influxdb
+- system.monasca.haproxy.proxy.listen.monasca
+- system.monasca.influxdb.database.monasca
+- system.monasca.cluster
+parameters:
+  _param:
+    keepalived_monasca_vip_address: ${_param:monasca_address}
+    keepalived_monasca_vip_password: 'password'
+    keepalived_monasca_vip_interface: ens4
+    cluster_vip_address: ${_param:monasca_address}
+    cluster_influxdb_port: 8086
+    cluster_node01_hostname: mnk01
+    cluster_node01_address: ${_param:monasca_node01_address}
+    cluster_node02_hostname: mnk02
+    cluster_node02_address: ${_param:monasca_node02_address}
+    cluster_node03_hostname: mnk03
+    cluster_node03_address: ${_param:monasca_node03_address}
+  linux:
+    network:
+      interface:
+        ens4:
+          enabled: true
+          type: eth
+          proto: dhcp

@@ -1,0 +1,15 @@
+applications:
+- keepalived
+classes:
+- service.keepalived.support
+parameters:
+  keepalived:
+    cluster:
+      enabled: true
+      instance:
+        monasca_vip:
+          address: ${_param:keepalived_monasca_vip_address}
+          password: ${_param:keepalived_monasca_vip_password}
+          interface: ${_param:keepalived_monasca_vip_interface}
+          virtual_router_id: 51
+          priority: ${_param:keepalived_vip_priority}

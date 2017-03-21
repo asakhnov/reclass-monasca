@@ -1,0 +1,23 @@
+parameters:
+  influxdb:
+    server:
+      database:
+        monasca:
+          enabled: true
+          name: monasca
+          retention_policy:
+          - name: monasca
+            is_default: true
+            duration: 30d
+            replication: 1
+      user:
+        monasca:
+          enabled: true
+          name: monasca
+          password: ${_param:influxdb_monasca_password}
+      grant:
+        grant_lma_all:
+          enabled: true
+          user: monasca
+          database: monasca
+          privilege: all

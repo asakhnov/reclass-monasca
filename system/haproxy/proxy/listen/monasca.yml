@@ -1,0 +1,23 @@
+parameters:
+  haproxy:
+    proxy:
+      listen:
+        monasca_api:
+          type: openstack-service
+          service_name: monasca
+          binds:
+          - address: ${_param:cluster_vip_address}
+            port: 8070
+          servers:
+          - name: mnk01
+            host: ${_param:cluster_node01_address}
+            port: 8070
+            params: check inter 10s fastinter 2s downinter 3s rise 3 fall 3
+          - name: mnk02
+            host: ${_param:cluster_node02_address}
+            port: 8070
+            params: check inter 10s fastinter 2s downinter 3s rise 3 fall 3
+          - name: mnk03
+            host: ${_param:cluster_node03_address}
+            port: 8070
+            params: check inter 10s fastinter 2s downinter 3s rise 3 fall 3

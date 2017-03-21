@@ -1,0 +1,4 @@
+classes:
+- service.monasca.api.cluster
+- service.monasca.persister.cluster
+- service.monasca.thresh.cluster

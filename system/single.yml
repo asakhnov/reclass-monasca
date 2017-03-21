@@ -1,0 +1,4 @@
+classes:
+- service.monasca.api.single
+- service.monasca.persister.single
+- service.monasca.thresh.single
