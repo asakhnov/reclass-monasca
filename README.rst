@@ -14,4 +14,4 @@ How To
     $ git clone https://github.com/asakhnov/reclass-monasca.git
     $ ln -s /usr/share/salt-formulas/reclass-monasca/system /srv/salt/reclass/classes/system/monasca 
     $ ln -s /usr/share/salt-formulas/reclass-monasca/cluster /srv/salt/reclass/classes/cluster/<name>/monasca
-
+    $ ln -s /usr/share/salt-formulas/reclass-monasca/scripts/monasca_infra_install.sh /srv/salt/reclass/scripts/monasca_infra_install.sh
