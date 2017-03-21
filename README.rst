@@ -7,11 +7,5 @@ This is the basic reclass data for Monasca deployment.
 How To
 ==============
 
-.. code-block:: bash
-
-    $ mkdir -p /usr/share/salt-formulas/
-    $ cd /usr/share/salt-formulas
-    $ git clone https://github.com/asakhnov/reclass-monasca.git
-    $ ln -s /usr/share/salt-formulas/reclass-monasca/system /srv/salt/reclass/classes/system/monasca 
-    $ ln -s /usr/share/salt-formulas/reclass-monasca/cluster /srv/salt/reclass/classes/cluster/<name>/monasca
-    $ ln -s /usr/share/salt-formulas/reclass-monasca/scripts/monasca_infra_install.sh /srv/salt/reclass/scripts/monasca_infra_install.sh
+The content of this reclass repo needs to be copied over to location
+of MCP reclass data ('/srv/salt/reclass/classes' by default).

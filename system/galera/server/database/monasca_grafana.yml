@@ -1,0 +1,15 @@
+parameters:
+  mysql:
+    server:
+      database:
+        monasca_grafana:
+          encoding: utf8
+          users:
+          - name: monasca_grafana
+            password: ${_param:mysql_monasca_grafana_password}
+            host: '%'
+            rights: all
+          - name: monasca_grafana
+            password: ${_param:mysql_monasca_grafana__password}
+            host: ${_param:cluster_local_address}
+            rights: all

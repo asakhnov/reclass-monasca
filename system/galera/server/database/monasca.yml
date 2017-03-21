@@ -1,0 +1,15 @@
+parameters:
+  mysql:
+    server:
+      database:
+        monasca:
+          encoding: utf8
+          users:
+          - name: monasca
+            password: ${_param:mysql_monasca_password}
+            host: '%'
+            rights: all
+          - name: monasca
+            password: ${_param:mysql_monasca_password}
+            host: ${_param:cluster_local_address}
+            rights: all
